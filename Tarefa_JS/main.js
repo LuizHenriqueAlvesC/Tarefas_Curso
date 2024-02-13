@@ -17,6 +17,9 @@ form.addEventListener('submit', function(e){
         const containerMensagemSucesso = document.querySelector('.success-message');
         containerMensagemSucesso.innerHTML = mensagemSucesso;
         containerMensagemSucesso.style.display = 'block';
+        setTimeout(function() {
+            location.reload();
+        }, 2000);
     } else {
         valorA.style.border = '1px solid red';
         document.querySelector('error-message').style.display = 'block';
