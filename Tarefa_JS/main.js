@@ -17,11 +17,15 @@ form.addEventListener('submit', function(e){
         const containerMensagemSucesso = document.querySelector('.success-message');
         containerMensagemSucesso.innerHTML = mensagemSucesso;
         containerMensagemSucesso.style.display = 'block';
+
+        valorA.value = '';
+        valorB.value = '';
+
         setTimeout(function() {
             location.reload();
         }, 2000);
     } else {
-        valorA.style.border = '1px solid red';
+        valorA.style.border = '';
         document.querySelector('error-message').style.display = 'block';
     }
 });
@@ -35,6 +39,18 @@ valorA.addEventListener('change', function(e) {
         document.querySelector('.error-message').style.display = 'block';
     } else {
         valorA.classList.remove('error');
+        document.querySelector('.error-message').style.display = 'none';
+    }
+});
+valorB.addEventListener('change', function(e) {
+    console.log(e.target.value);
+    formEValido = valorTotal(valorA.value, e.target.value);
+
+    if (!formEValido) {
+        valorB.classList.add('error');
+        document.querySelector('.error-message').style.display = 'block';
+    } else {
+        valorB.classList.remove('error');
         document.querySelector('.error-message').style.display = 'none';
     }
 });

@@ -55,6 +55,7 @@ button:hover {
 }
 
 input.error {
+    border: '';
     border-color: red;
     color: red;
     outline-color: red;
