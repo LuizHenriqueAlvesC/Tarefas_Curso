@@ -18,6 +18,8 @@ form.addEventListener('submit', function(e){
         containerMensagemSucesso.innerHTML = mensagemSucesso;
         containerMensagemSucesso.style.display = 'block';
 
+        valorA.classList.remove('error');
+
         valorA.value = '';
         valorB.value = '';
 
@@ -25,7 +27,7 @@ form.addEventListener('submit', function(e){
             location.reload();
         }, 2000);
     } else {
-        valorA.style.border = '';
+        valorA.style.border = '1px solid red';
         document.querySelector('error-message').style.display = 'block';
     }
 });
