@@ -10,12 +10,12 @@ function valorTotal(valorA, valorB) {
 form.addEventListener('submit', function(e){
     e.preventDefault();
 
-    const menssagemSucesso = `1Âº numero <b>${valorA.value}</b> 2Âº numero <b>${valorB.value}</b>`
+    const mensagemSucesso = `1Âº numero <b>${valorA.value}</b> 2Âº numero <b>${valorB.value}</b>`
 
     formEValido = valorTotal(valorA.value, valorB.value);
     if (formEValido) {
         const containerMensagemSucesso = document.querySelector('.success-message');
-        containerMensagemSucesso.innerHTML = menssagemSucesso;
+        containerMensagemSucesso.innerHTML = mensagemSucesso;
         containerMensagemSucesso.style.display = 'block';
     } else {
         valorA.style.border = '1px solid red';
